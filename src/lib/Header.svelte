@@ -13,6 +13,9 @@
   #header {
     text-align: center;
     margin: 3rem auto;
+    @media screen and (max-width: vars.$sm) {
+      margin: 1rem auto;
+    }
   }
 
   #header img {

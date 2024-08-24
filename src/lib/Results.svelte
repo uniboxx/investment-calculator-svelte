@@ -1,9 +1,9 @@
 <script>
   import { calculateInvestmentResults, formatter } from '../util/investment';
 
+  //- STATE
   let { userInput } = $props();
   let resultsData = $derived.by(() => calculateInvestmentResults(userInput));
-
   let totalInterests = $derived.by(() => {
     let totalInterests = [];
     for (let i = 0; i < resultsData.length; i++) {
@@ -15,7 +15,6 @@
     }
     return totalInterests;
   });
-
   let totalInvestments = $derived.by(() => {
     let totalInvestments = resultsData.map(
       el => userInput.initialInvestment + userInput.annualInvestment * el.year
